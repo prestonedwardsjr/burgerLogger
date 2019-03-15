@@ -17,3 +17,11 @@ li {
 .form-group {
   margin-bottom: 5px;
 }
+body { 
+	background-image: url("http://images.media-allrecipes.com/userphotos/960x960/3757724.jpg");
+	background-position: center center;
+	background-repeat:  no-repeat;
+	background-attachment: fixed;
+	background-size:  cover;
+	/* background-color: #000000;   */
+}

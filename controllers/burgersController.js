@@ -18,12 +18,12 @@ router.get("/", function(req, res) {
 
 router.post("/api/burgers", function(req, res) {
   console.log(req.body)
-  burger.create(
+  burger.create([
     "burgerName", "devour_It !"
-  , 
+  ], [
     req.body.burgerName, req.body.devour_it
-  , function(result) {
-    // Send back the ID of the new quote
+  ], function(result) {
+    // Send back the ID of the new burger
     res.json({ id: result.insertId });
   });
 });
