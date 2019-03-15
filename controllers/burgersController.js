@@ -15,11 +15,21 @@ router.get("/", function(req, res) {
     res.render("index", hbsObject);
   });
 });
+router.post("/api/cats", function(req, res) {
+  cat.create([
+    "name", "sleepy"
+  ], [
+    req.body.name, req.body.sleepy
+  ], function(result) {
+    // Send back the ID of the new quote
+    res.json({ id: result.insertId });
+  });
+});
 
-router.post("/api/burgers", function(req, res) {
-  console.log(req.body)
+router.post("/burger", function(req, res) {
+  console.log(req.body.burgerName)
   burger.create([
-    "burgerName", "devour_It !"
+    "burgerName", "devour_It!"
   ], [
     req.body.burgerName, req.body.devour_it
   ], function(result) {
