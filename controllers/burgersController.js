@@ -15,28 +15,29 @@ router.get("/", function(req, res) {
     res.render("index", hbsObject);
   });
 });
-router.post("/api/cats", function(req, res) {
-  cat.create([
-    "name", "sleepy"
+
+router.post("/api/burgers", function(req, res) {
+  burger.create([
+    "burgerName", "devour_it"
   ], [
-    req.body.name, req.body.sleepy
+    req.body.name, false
   ], function(result) {
     // Send back the ID of the new quote
     res.json({ id: result.insertId });
   });
 });
 
-router.post("/burger", function(req, res) {
-  console.log(req.body.burgerName)
-  burger.create([
-    "burgerName", "devour_It!"
-  ], [
-    req.body.burgerName, req.body.devour_it
-  ], function(result) {
-    // Send back the ID of the new burger
-    res.json({ id: result.insertId });
-  });
-});
+// router.post("/api/burgers", function(req, res) {
+//   console.log(req.body.burgerName)
+//   burger.create([
+//     "burgerName", "devour_It!"
+//   ], [
+//     req.body.burgerName, req.body.devour_it
+//   ], function(result) {
+//     // Send back the ID of the new burger
+//     res.json({ id: result.insertId });
+//   });
+// });
 
 router.put("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;

@@ -51,14 +51,14 @@ var orm = {
     });
   },
   create: function(table, cols, vals, cb) {
-    var queryString = "INSERT INTO " + table_name + "(" +cols +") values (" + vals+")"
+    var queryString = "INSERT INTO " + table;
 
-    // queryString += " (";
-    // queryString += cols.toString();
-    // queryString += ") ";
-    // queryString += "VALUES (";
-    // queryString += printQuestionMarks(vals.length);
-    // queryString += ") ";
+    queryString += " (";
+    queryString += cols.toString();
+    queryString += ") ";
+    queryString += "VALUES (";
+    queryString += printQuestionMarks(vals.length);
+    queryString += ") ";
 
     console.log(queryString);
 
