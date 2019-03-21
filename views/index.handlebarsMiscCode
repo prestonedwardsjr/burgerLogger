@@ -10,12 +10,12 @@
 			<ul>
 			  {{#each burgers}}
 			    {{#unless devour_it}}
-			      <li class="burger_item">
+			      <li>
 			      	{{this.id}}
 			        {{this.burgerName}}
-              <form class="create-update-burger" method="PUT">
+              <form action="/{{this.id}}?_method=PUT" method="POST">
 			          <input type="hidden" name="devour_it" value="true">
-			          <button class="btn-primary add-burger" type="submit">Devour It!</button>
+			          <button class="btn-primary" type="submit">Devour It!</button>
 			        </form>
 			      </li>
 			    {{/unless}}

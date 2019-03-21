@@ -2,6 +2,7 @@
 $(function() {
   $(".add-burger").on("click", function(event) {
     var id = $(this).data("id");
+    console.log($("hello"));
     var newBurger = $(this).data("newburger");
 
     var newHotBurger = {
@@ -21,10 +22,10 @@ $(function() {
     );
   });
 
-  $(".create-form").on("submit", function(event) {
+  $(".create-update-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
-
+console.log("newBurger");
     var newBurger = {
       name: $("#ca").val().trim()
     };
